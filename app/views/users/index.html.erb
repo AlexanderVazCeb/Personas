@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<center><h1>Personas Registradas</h1></center>
+
+<table>
+  <thead>
+    <tr>
+    <th>Id</th>
+      <th>Nombre</th>
+      <th>Sexo</th>
+      <th>Edad</th>
+      <th>Peso</th>
+      <th>Estatura</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+      <td><%= user.id %></td>
+        <td><%= user.Nombre %></td>
+        <td><%= user.Sexo %></td>
+        <td><%= user.Edad %></td>
+        <td><%= user.Peso %></td>
+        <td><%= user.Estatura %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Registrar nueva persona', new_user_path %>
+
+<%= link_to 'Personas registradas', users_path %>
+
+<%= link_to 'Reporte', users_reporte_path %>
+
+
+

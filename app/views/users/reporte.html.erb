@@ -1,0 +1,101 @@
+<center>
+<h2>Reporte de personas por Edad: </h2>
+
+<table>
+  <thead>
+    <tr>
+    <th>Id</th>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+<table>
+ <% @usersEdad.each do |userO| %>
+      <tr>
+        <td><%= userO.id %></td>
+        <td><%= userO.Nombre %></td>
+        <td><%= userO.Edad %></td>
+        </tr>
+      <% end %>
+</table>  
+
+  <% personaMenorEdad = @usersEdad.first %>
+  <% personaMayorEdad = @usersEdad.last %>
+  
+
+<h3> La persona con menor Edad es:  <%= personaMenorEdad.Nombre %> </h3>
+<h3> La persona con mayor Edad es:  <%= personaMayorEdad.Nombre %> </h3>
+ 
+
+
+
+<h2>Reporte de personas por Peso: </h2>
+
+<table>
+  <thead>
+    <tr>
+    <th>Id</th>
+      <th>Nombre</th>
+      <th>Peso</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+<table>
+ <% @usersPeso.each do |userO| %>
+      <tr>
+        <td><%= userO.id %></td>
+        <td><%= userO.Nombre %></td>
+        <td><%= userO.Peso %></td>
+        </tr>
+      <% end %>
+</table>  
+
+  <% personaMenorPeso = @usersPeso.first %>
+  <% personaMayorPeso = @usersPeso.last %>
+  
+
+<h3> La persona con menor Peso es:  <%= personaMenorPeso.Nombre %> </h3>
+<h3> La persona con mayor Peso es:  <%= personaMayorPeso.Nombre %> </h3>
+ 
+
+
+<h2>Reporte de personas por Estatura: </h2>
+
+<table>
+  <thead>
+    <tr>
+    <th>Id</th>
+      <th>Nombre</th>
+      <th>Estatura</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+<table>
+ <% @usersEstatura.each do |userO| %>
+      <tr>
+        <td><%= userO.id %></td>
+        <td><%= userO.Nombre %></td>
+        <td><%= userO.Estatura %></td>
+        </tr>
+      <% end %>
+</table>  
+
+  <% personaMenorEstatura = @usersEstatura.first %>
+  <% personaMayorEstatura = @usersEstatura.last %>
+  
+
+<h3> La persona con menor Peso es:  <%= personaMenorEstatura.Nombre %> </h3>
+<h3> La persona con mayor Peso es:  <%= personaMayorEstatura.Nombre %> </h3>
+ 
+
+
+ <%= link_to 'Registrar nueva persona', new_user_path %>
+ <%= link_to 'Personas registradas', users_path %>
+
+ </center>
